@@ -15,6 +15,11 @@ It combines:
 
 ---
 
+## Demo
+This demo requires the API server to be running locally on your machine at http://127.0.0.1:8000
+
+[https://insight.adharvarun.tech](https://insight.adharvarun.tech)
+
 ## ✨ Features
 - Next-step price prediction  
 - BUY / SELL / HOLD signals  
