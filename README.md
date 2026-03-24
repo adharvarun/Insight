@@ -1,5 +1,5 @@
 # Insight 📊🧠  
-**Don’t Guess. Insight.**
+**Where data becomes decisions**
 
 ![Insight Banner](Banner.png)
 
