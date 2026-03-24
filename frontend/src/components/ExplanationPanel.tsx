@@ -6,9 +6,10 @@ import ReactMarkdown from "react-markdown";
 
 type ExplanationPanelProps = {
   symbol: string;
+  apiBaseUrl?: string;
 };
 
-export default function ExplanationPanel({symbol}: ExplanationPanelProps) {
+export default function ExplanationPanel({symbol, apiBaseUrl}: ExplanationPanelProps) {
   const [showExplanation, setShowExplanation] = useState(false);
   const [explanation, setExplanation] = useState("");
 
@@ -21,7 +22,7 @@ export default function ExplanationPanel({symbol}: ExplanationPanelProps) {
 
   const getExplanation = async (inputSymbol: string) => {
     try {
-      const res = await axios.post("http://127.0.0.1:8000/explain", {
+      const res = await axios.post(`${apiBaseUrl}/explain`, {
         symbol: inputSymbol,
       });
       const explanation = cleanAnswer(res.data?.content) || "No explanation available.";

@@ -13,6 +13,8 @@ export default function Home() {
   const [marketSnapshot, setMarketSnapshot] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const apiBaseUrl = process.env.API_LINK || "http://127.0.0.1:8000";
+
   const fallbackSnapshot = {
     symbol: "",
     companyName: "",
@@ -41,10 +43,10 @@ export default function Home() {
     setLoading(true);
     try {
       const [infoRes, predictionRes] = await Promise.all([
-        axios.post("http://127.0.0.1:8000/info", {
+        axios.post(`${apiBaseUrl}/info`, {
           symbol: inputSymbol,
         }),
-        axios.post("http://127.0.0.1:8000/predict", {
+        axios.post(`${apiBaseUrl}/predict`, {
           symbol: inputSymbol,
         }),
       ]);
@@ -79,7 +81,7 @@ export default function Home() {
           <PredictionMetrics snapshot={safeSnapshot} />
         </section>
 
-        <ExplanationPanel symbol={safeSnapshot.symbol} />
+        <ExplanationPanel symbol={safeSnapshot.symbol} apiBaseUrl={apiBaseUrl} />
       </main>
       <div className="flex justify-center pb-3">
         <p className="text-gray-400">Made with ❤️ by <a href="https://www.adharvarun.tech/">Adharv Arun</a></p>

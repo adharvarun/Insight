@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+langchain-huggingface
+huggingface-hub
+pandas
+numpy
+scikit-learn
