@@ -20,6 +20,8 @@ This demo requires the API server to be running locally on your machine at http:
 
 [https://insight.adharvarun.tech](https://insight.adharvarun.tech)
 
+YouTube Video: [https://youtu.be/u5EliloLH0o](https://youtu.be/u5EliloLH0o)
+
 ## ✨ Features
 - Next-step price prediction  
 - BUY / SELL / HOLD signals  
